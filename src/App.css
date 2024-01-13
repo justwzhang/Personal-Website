@@ -1,0 +1,59 @@
+:root {
+	--scroll: 0;
+}
+
+body {
+	background-color: "#ea833a";
+	height:5000px;
+}
+
+
+
+#root {
+	/* background-color: var(--swatch-primary); */
+	font-family: "Lexend Exa";
+	position: absolute;
+	width: 100%;
+	left: 0%;
+	height: 100%;
+	top: 0%;
+	overflow: hidden;
+}
+
+#app-root {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+}
+
+/* Do Not delete anything here */
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 8px;
+	background-color: #e7e7e7;
+	border: 1px solid #cacaca;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: #363636;
+}
+
+/* .inputRounded .MuiOutlinedInput-root{
+	border-radius: 50px;
+ }
+#homepage-screen {
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	/* background-color: var(--swatch-primary); 
+} */
+
