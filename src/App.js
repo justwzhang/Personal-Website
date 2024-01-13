@@ -6,7 +6,6 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import {
   HomeScreen,
   NavBar,
-  PageBackground
 } from './components';
 /*
 	This is our application's top-level component.
