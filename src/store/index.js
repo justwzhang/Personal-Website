@@ -24,7 +24,8 @@ function GlobalStoreContextProvider(props) {
   // THESE ARE ALL THE THINGS OUR DATA STORE WILL MANAGE
   const [store, setStore] = useState({
     primary: "#e16d17",
-    secondary:"#ea833a",
+    // secondary:"#ea833a",
+    secondary:"#f1ae7a",
     text:"#424242",
     navBar:"#424242",
     updateScroll: false,

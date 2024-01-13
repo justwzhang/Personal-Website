@@ -13,16 +13,16 @@ export default function HomeScreen(){
         let x = 0;
         let num = window.scrollY/window.innerHeight;
         console.log(num);
-        if(num <= 1) {
+        if(num <= 1) {// moves the left out of the way
             document.getElementById('left').style.opacity = 1-num*2;
             x = (0-num)*100;
             document.getElementById('left').style.transform = 'translate3d('+x+'%,0%,0px)';
             console.log(document.getElementById('left').style.transform)
-        } else if(num > 2 && num <= 4) {
+        } else if(num > 2 && num <= 4) {// does the animation it needs
             // document.getElementById('center').style.opacity = 2-(num);
             x = (2-num)*2;
             document.getElementById('center').style.transform = '';
-        } else if(num > 4) {
+        } else if(num > 4) {// moves the right into frame
             document.getElementById('right').style.opacity = (num)-4.3;
             
             //need to scale num to 50 so that it is 50 + x where x is the scaled value
@@ -37,13 +37,18 @@ export default function HomeScreen(){
     return(
     <div style ={{width:"100%", background:store.secondary, position:"absoute"}}>
         <div style={{height:"100%", width:"100%", background: "red"}}>
+            
+            
+            <div id = "full" style={{width:"100%", height:"100%", background: store.secondary, position:"fixed"}}> {/** info box */}
+            
+            </div>
+            <div id = "center" style={{width:"50%", height:"100%", background: store.secondary, marginLeft:"50%", position:"fixed", border: "5px solid black"}}> {/** animation box */}
+            
+            </div>
             <div id = "left" style={{width:"50%", height:"100%", background: store.primary, position:"fixed", }}> {/** intro box */}
                 <div style={{border: "15px solid black", marginTop:"10%"}}>Test</div>
             </div>
-            <div id = "center" style={{width:"50%", height:"100%", background: store.secondary, marginLeft:"50%", position:"fixed"}}> {/** intro box */}
-            
-            </div>
-            <div id = "right" style={{width:"50%", height:"100%", background: store.primary, marginLeft:"100%", position:"fixed", opacity:"0"}}>
+            <div id = "right" style={{width:"50%", height:"100%", background: store.primary, marginLeft:"100%", position:"fixed", opacity:"0"}}>{/** socials box */}
             
             </div>
         </div>
