@@ -1,5 +1,8 @@
 :root {
 	--scroll: 0;
+	--primary: #e16d17;
+    --secondary: #ea833a;
+	--gray: #424242;
 }
 
 body {
@@ -28,7 +31,10 @@ body {
 	left: 0%;
 }
 
-/* Do Not delete anything here */
+/* 
+* Css for scroll bar
+* this apllies to all scroll bars in the app
+*/
 ::-webkit-scrollbar {
 	width: 12px;
 }
@@ -44,6 +50,76 @@ body {
 	border-radius: 8px;
 	background-color: #363636;
 }
+/* Css for scroll bar end*/
+
+
+
+/* 
+* Base Box css for text appearing animation
+* The "Second" classes are ment for the sub texts
+* these can be attached to any comp for future use
+*/
+.RevealText{
+  font-size: 60px;
+  font-weight: 800;
+  position: relative;
+  color: transparent;
+
+  animation: ShowTextLR forwards;
+  animation-delay: 1200ms;
+}
+.RevealTextSecond{
+	font-size: 30px;
+	font-weight: 800;
+	position: relative;
+	color: transparent;
+  
+	animation: ShowTextLR forwards;
+	animation-delay: 1200ms;
+  }
+
+.RevealBox{
+	height: 100%;
+	width: 0%;
+	scale: 0, 1;
+	position:absolute;
+	background: var(--gray);
+	animation: DivAppear 1200ms ease-out;
+	animation-delay: 500ms;
+	left: 0
+}
+
+.RevealBoxSecond{
+	height: 100%;
+	width: 0%;
+	scale: 0, 1;
+	position:absolute;
+	background: var(--gray);
+	animation: DivAppear 1200ms ease-out;
+	animation-delay: 500ms;
+	left: 0
+}
+
+@keyframes DivAppear{
+	80% { 
+		width: 100%;
+		left: 0;
+	}
+	100%{
+		width: 0%;
+		left: 100%;
+	}
+}
+
+@keyframes ShowTextLR{
+	to{
+		/* color: var(--gray) */
+		color: white
+	}
+}
+/* Base Box css for text appearing animation end*/
+
+
 
 /* .inputRounded .MuiOutlinedInput-root{
 	border-radius: 50px;

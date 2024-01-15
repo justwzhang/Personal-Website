@@ -36,16 +36,20 @@ export default function HomeScreen(){
     }
 
     return(
-    <div style ={{width:"100%", background:store.secondary, position:"absoute"}}>
+    <div style ={{width:"100%", background:store.secondary, position:"absoute", marginTop:"50pt"}}>
         <div style={{height:"100%", width:"100%", background: "red"}}>
             <div id = "full" style={{width:"100%", height:"100%", background: store.secondary, position:"fixed"}}> {/** info box */}
-            
+                
             </div>
-            <div id = "center" style={{width:"50%", height:"100%", background: "red", marginLeft:"50%", position:"fixed"}}> {/** animation box */}
+            <div id = "center" style={{width:"50%", height:"100%", background: "", marginLeft:"50%", position:"fixed"}}> {/** animation box */}
             
             </div>
             <div id = "left" style={{width:"50%", height:"100%", background: store.primary, position:"fixed", }}> {/** intro box */}
-
+                <div style={{border:"15px solid black", height: "50%"}}>
+                    <h1 class="RevealText" > Hi there I am Justin <span class="RevealBox"></span></h1>
+                    <h7 class="RevealTextSecond" > Hi there I am Justin <span class="RevealBoxSecond"></span></h7>
+                </div>
+            
             </div>
             <div id = "right" style={{width:"50%", height:"100%", background: store.primary, marginLeft:"100%", position:"fixed", opacity:"0"}}>{/** socials box */}
             

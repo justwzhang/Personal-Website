@@ -38,7 +38,7 @@ export default function NavBar(){
                     
                     <Toolbar style={{height:"100%"}}>
                         <Box sx={{ flexGrow: 1 }}>
-                            <Button style={style.ToolBarButtonStyle} color="ToolBarButton"> <font size = "+3"><b>Justin Zhang</b></font></Button>
+                            <Button style={style.ToolBarButtonStyle} color="ToolBarButton"> <font size = "+3"><b>Justin</b></font></Button>
                             <div style={{marginLeft:"20%"}}>
                                 
                             </div>
@@ -47,19 +47,6 @@ export default function NavBar(){
                         <Button style={{textTransform: 'none'}} color="ToolBarButton"> <font size = "+1"><b>About</b></font></Button>
                         <Button style={{textTransform: 'none'}} color="ToolBarButton"> <font size = "+1"><b>Projects</b></font></Button>
                         <Button style={{textTransform: 'none'}} color="ToolBarButton"> <font size = "+1"><b>Contact</b></font></Button>
-                        {/* <IconButton
-                        size="large"
-                        edge="start"
-                        color={store.primary}
-                        aria-label="menu"
-                        style={{
-                            width:"1%",
-                            height:"1pt",
-                            transform:"scale(1.5)"
-                        }}
-                        >
-                            <MenuIcon />
-                        </IconButton> */}
                     </Toolbar>
 
                 </div>
