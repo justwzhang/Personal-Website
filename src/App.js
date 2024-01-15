@@ -28,7 +28,8 @@ const App = () => {
 
   return (
     <GlobalStoreContextProvider>
-      <div style={{display: "flex",
+      <div style={{
+        display: "flex",
         flexFlow:"column",
         height: "100%",
         background: "white"}}>

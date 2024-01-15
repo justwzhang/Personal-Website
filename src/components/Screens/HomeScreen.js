@@ -1,15 +1,60 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import GlobalStoreContext from '../../store';
 
+
+
 export default function HomeScreen(){
     const { store } = useContext(GlobalStoreContext);
-    
+    const style = {
+        InfoBox:{
+            width:"100%", 
+            height:"100%", 
+            background: store.secondary, 
+            position:"fixed",
+        },
+
+        AnimationBox:{
+            width:"50%", 
+            height:"100%", 
+            background: "", 
+            marginLeft:"50%", 
+            position:"fixed"
+        },
+
+        IntroBox:{
+            width:"50%", 
+            height:"100%", 
+            background: store.primary, 
+            // border:"6px solid black",
+            position:"fixed"
+        },
+
+        IntroTextBox:{
+            // border:"4px solid white", 
+            height: "80%", 
+            marginTop:"45%", 
+            marginLeft:"50%", 
+            width:"80%", 
+            transform:"translate(-50%,-50%)", 
+            textAllign: "center",
+        },
+
+        SocialsBox:{
+            width:"50%", 
+            height:"100%", 
+            background: store.primary, 
+            marginLeft:"100%", 
+            position:"fixed", 
+            opacity:"0"
+        },
+    }
+
     useEffect(()=>{
         window.addEventListener("scroll", scrollEvent);
     },[store.updateScroll]);
 
+    //handles the event fired when scrolling
     function scrollEvent(e){
-        // console.log(e);
         let x = 0;
         let num = window.scrollY/window.innerHeight;
         console.log(num);
@@ -36,26 +81,36 @@ export default function HomeScreen(){
     }
 
     return(
-    <div style ={{width:"100%", background:store.secondary, position:"absoute", marginTop:"50pt"}}>
-        <div style={{height:"100%", width:"100%", background: "red"}}>
-            <div id = "full" style={{width:"100%", height:"100%", background: store.secondary, position:"fixed"}}> {/** info box */}
+    <div style ={{width:"100%", background:store.secondary, marginTop:"50pt", flex: "1 1 auto"}}>
+       
+       <div style={{height:"100%", width:"100%", background: "red"}}>
+            {/** info box */}
+            <div id = "full" style={style.InfoBox}> 
                 
             </div>
-            <div id = "center" style={{width:"50%", height:"100%", background: "", marginLeft:"50%", position:"fixed"}}> {/** animation box */}
+
+
+            {/** animation box */}
+            <div id = "center" style={style.AnimationBox}> 
             
             </div>
-            <div id = "left" style={{width:"50%", height:"100%", background: store.primary, position:"fixed", }}> {/** intro box */}
-                <div style={{border:"15px solid black", height: "50%"}}>
-                    <h1 class="RevealText" > Hi there I am Justin <span class="RevealBox"></span></h1>
-                    <h7 class="RevealTextSecond" > Hi there I am Justin <span class="RevealBoxSecond"></span></h7>
+
+
+            {/** intro box */}
+            <div id = "left" style={style.IntroBox}> 
+                <div style={style.IntroTextBox}>
+                    <p class="RevealText" style={{}}> Hi there I am Justin <span class="RevealBox"></span></p>
+                    <p class="RevealTextSecond" style={{}}> A Software Engineer based in New York.<span class="RevealBoxSecond"></span></p>
                 </div>
             
             </div>
-            <div id = "right" style={{width:"50%", height:"100%", background: store.primary, marginLeft:"100%", position:"fixed", opacity:"0"}}>{/** socials box */}
+
+
+            {/** socials box */}
+            <div id = "right" style={style.SocialsBox}>
             
             </div>
         </div>
-        
         
     </div>
 

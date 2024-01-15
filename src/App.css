@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+/* font-family: 'Forum', serif; */
+
+
 :root {
 	--scroll: 0;
 	--primary: #e16d17;
@@ -60,22 +64,22 @@ body {
 * these can be attached to any comp for future use
 */
 .RevealText{
-  font-size: 60px;
-  font-weight: 800;
-  position: relative;
-  color: transparent;
-
-  animation: ShowTextLR forwards;
-  animation-delay: 1200ms;
+	font-size: 60px;
+	font-weight: 1000;
+	position: relative;
+	color: transparent;
+	font-family: 'Forum', serif;
+	animation: ShowTextLR forwards;
+	animation-delay: 1200ms;
 }
 .RevealTextSecond{
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 800;
 	position: relative;
 	color: transparent;
   
 	animation: ShowTextLR forwards;
-	animation-delay: 1200ms;
+	animation-delay: 1800ms;
   }
 
 .RevealBox{
@@ -96,18 +100,22 @@ body {
 	position:absolute;
 	background: var(--gray);
 	animation: DivAppear 1200ms ease-out;
-	animation-delay: 500ms;
+	animation-delay: 900ms;
 	left: 0
 }
 
+
 @keyframes DivAppear{
+
 	80% { 
 		width: 100%;
 		left: 0;
+		
 	}
 	100%{
 		width: 0%;
 		left: 100%;
+		height:100%
 	}
 }
 
@@ -118,6 +126,11 @@ body {
 	}
 }
 /* Base Box css for text appearing animation end*/
+
+/*
+* The arrow annimations
+*/
+
 
 
 
