@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import GlobalStoreContext from '../../store';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useHistory } from "react-router-dom";
 
 const style = {
     ToolBarButtonStyle:{
@@ -29,7 +30,7 @@ const theme = createTheme({
 
 export default function NavBar(){
     const { store } = useContext(GlobalStoreContext);
-    
+    const history = useHistory();
 
     return (
         <ThemeProvider theme={theme}>
@@ -38,15 +39,15 @@ export default function NavBar(){
                     
                     <Toolbar style={{height:"100%"}}>
                         <Box sx={{ flexGrow: 1 }}>
-                            <Button style={style.ToolBarButtonStyle} color="ToolBarButton"> <font size = "+3"><b>Justin</b></font></Button>
+                            <Button style={style.ToolBarButtonStyle} color="ToolBarButton" onClick={()=>history.push('/')}> <font size = "+3"><b>JZ</b></font></Button>
                             <div style={{marginLeft:"20%"}}>
                                 
                             </div>
                             
                         </Box>
-                        <Button style={{textTransform: 'none'}} color="ToolBarButton"> <font size = "+1"><b>About</b></font></Button>
-                        <Button style={{textTransform: 'none'}} color="ToolBarButton"> <font size = "+1"><b>Projects</b></font></Button>
-                        <Button style={{textTransform: 'none'}} color="ToolBarButton"> <font size = "+1"><b>Contact</b></font></Button>
+                        <Button style={{textTransform: 'none'}} color="ToolBarButton" onClick={()=>history.push('/about')}> <font size = "+1"><b>About</b></font></Button>
+                        <Button style={{textTransform: 'none'}} color="ToolBarButton" onClick={()=>history.push('/projects')}> <font size = "+1"><b>Projects</b></font></Button>
+                        <Button style={{textTransform: 'none'}} color="ToolBarButton" onClick={()=>history.push('/contact')}> <font size = "+1"><b>Contact</b></font></Button>
                     </Toolbar>
 
                 </div>

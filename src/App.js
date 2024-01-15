@@ -4,8 +4,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { GlobalStoreContextProvider } from './store';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import {
+  AboutMe,
+  Contacts,
   HomeScreen,
   NavBar,
+  Projects,
 } from './components';
 /*
 	This is our application's top-level component.
@@ -27,16 +30,23 @@ let theme = createTheme({
 const App = () => {
 
   return (
-    <GlobalStoreContextProvider>
-      <div style={{
-        display: "flex",
-        flexFlow:"column",
-        height: "100%",
-        background: "white"}}>
-        <NavBar/>
-        <HomeScreen/>
-      </div>
-    </GlobalStoreContextProvider>
+    <BrowserRouter>
+      <GlobalStoreContextProvider>
+        <div style={{
+          display: "flex",
+          flexFlow:"column",
+          height: "100%",
+          background: "white"}}>
+          <NavBar/>
+          <Switch>
+            <Route path='/' exact component={HomeScreen}/>
+            <Route path='/about' exact component={AboutMe}/>
+            <Route path='/projects' exact component={Projects}/>
+            <Route path='/contacts' exact component={Contacts}/>
+          </Switch>
+        </div>
+      </GlobalStoreContextProvider>
+    </BrowserRouter>
   );
 };
 
